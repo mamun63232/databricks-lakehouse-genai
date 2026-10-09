@@ -1,4 +1,4 @@
-# Federal Air Quality Lakehouse with GenAI
+# Air Quality Lakehouse with GenAI
 
 A Databricks lakehouse built on public EPA air quality data, with a GenAI assistant that answers questions about the data and the standards behind it. Built as a portfolio project to show how I would design and deliver a modern data and AI platform for a federal agency.
 

@@ -1,4 +1,4 @@
-# Federal Air Quality Lakehouse with GenAI
+# Air Quality Lakehouse with GenAI
 
 Portfolio project plan for Mamun. Target role: Data and AI Practice Leader.
 Working repo name: `databricks-lakehouse-genai`
