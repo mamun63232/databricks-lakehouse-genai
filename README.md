@@ -3,6 +3,7 @@
 A Databricks lakehouse built on public EPA air quality data, with a GenAI assistant that answers questions about the data and the standards behind it. Built as a portfolio project to show how I would design and deliver a modern data and AI platform for a federal agency.
 
 > Status: in progress. See the [project plan](docs/project-plan.md) for scope and milestones.
+> Personal project, not affiliated with or endorsed by EPA. See the [disclaimer](#disclaimer).
 
 ## The business problem
 
@@ -79,3 +80,9 @@ tests/                unit tests
 ## Data sources
 
 All data is public: the EPA Air Quality System pre-generated data files, the AQS data dictionary, NAAQS fact sheets and the AQI technical guide. Nothing from any client engagement is used.
+
+Data source: U.S. Environmental Protection Agency, Air Quality System (AQS), https://aqs.epa.gov/aqsweb/airdata/download_files.html. U.S. government works are in the public domain.
+
+## Disclaimer
+
+This is a personal portfolio project. It is not affiliated with, sponsored by or endorsed by the U.S. Environmental Protection Agency or any other government agency. EPA data is used as published, and any analysis or conclusions here are my own.
