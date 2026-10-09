@@ -1,13 +1,13 @@
 # Air Quality Lakehouse with GenAI
 
-A Databricks lakehouse built on public EPA air quality data, with a GenAI assistant that answers questions about the data and the standards behind it. Built as a portfolio project to show how I would design and deliver a modern data and AI platform for a federal agency.
+A Databricks lakehouse built on public air quality data, with a GenAI assistant that answers questions about the data and the standards behind it. Built as a portfolio project to show how I would design and deliver a modern data and AI platform for a client.
 
 > Status: in progress. See the [project plan](docs/project-plan.md) for scope and milestones.
-> Personal project, not affiliated with or endorsed by EPA. See the [disclaimer](#disclaimer).
+> Personal project, not affiliated with or endorsed by any data publisher. See the [disclaimer](#disclaimer).
 
 ## The business problem
 
-Which communities are exposed to unhealthy air, how has that changed over time, and where is monitoring coverage too thin to know? Agencies have the raw data, but it sits in large flat files that are hard to query and harder to explain. This project turns it into governed, tested tables and puts a question answering layer on top.
+Which communities are exposed to unhealthy air, how has that changed over time, and where is monitoring coverage too thin to know? Organizations have the raw data, but it sits in large flat files that are hard to query and harder to explain. This project turns it into governed, tested tables and puts a question answering layer on top.
 
 ## Demo
 
@@ -16,7 +16,7 @@ Coming in milestone 16: a 5 minute video and screenshots of the dashboard, a RAG
 ## Architecture
 
 ```
-EPA AQS CSVs + public PDFs
+Public air quality CSVs + public PDFs
         |
         v
 Unity Catalog volume (raw files)
@@ -45,7 +45,7 @@ GOLD    dbt star schema and marts
 
 ## Key results
 
-To be filled in as milestones land: rows processed, pipeline run time, data quality pass rate, RAG evaluation score, and estimated monthly cost at agency scale.
+To be filled in as milestones land: rows processed, pipeline run time, data quality pass rate, RAG evaluation score, and estimated monthly cost at enterprise scale.
 
 ## Governance and responsible AI
 
@@ -79,10 +79,10 @@ tests/                unit tests
 
 ## Data sources
 
-All data is public: the EPA Air Quality System pre-generated data files, the AQS data dictionary, NAAQS fact sheets and the AQI technical guide. Nothing from any client engagement is used.
+All data is public: the Air Quality System pre-generated data files, the data dictionary, air quality standards fact sheets and the AQI technical guide. Nothing from any client engagement is used.
 
-Data source: U.S. Environmental Protection Agency, Air Quality System (AQS), https://aqs.epa.gov/aqsweb/airdata/download_files.html. U.S. government works are in the public domain.
+Data source: Air Quality System pre-generated data files, https://aqs.epa.gov/aqsweb/airdata/download_files.html. Published for public download and in the public domain.
 
 ## Disclaimer
 
-This is a personal portfolio project. It is not affiliated with, sponsored by or endorsed by the U.S. Environmental Protection Agency or any other government agency. EPA data is used as published, and any analysis or conclusions here are my own.
+This is a personal portfolio project. It is not affiliated with, sponsored by or endorsed by the publisher of the data or any other organization. The data is used as published, and any analysis or conclusions here are my own.

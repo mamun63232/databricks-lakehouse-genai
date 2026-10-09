@@ -7,27 +7,27 @@ Working repo name: `databricks-lakehouse-genai`
 
 Hiring managers for practice leader roles want to see three things: you can design a modern data platform, you can put GenAI on top of it responsibly, and you can explain it like a client handover. This project shows all three in one repo, and it closes the gaps called out in your roadmap: Databricks, PySpark, GenAI, dbt, Terraform and GitHub Actions.
 
-It also tells a story recruiters understand quickly: "I took a public federal dataset and built the kind of platform I would sell and deliver to an agency."
+It also tells a story recruiters understand quickly: "I took a public dataset and built the kind of platform I would sell and deliver to a client."
 
 ## Dataset
 
-**Pick: EPA Air Quality System (AQS) pre-generated data files.**
+**Pick: Air Quality System (AQS) pre-generated data files.**
 
 - Free public CSV downloads of daily and hourly readings for ozone, PM2.5, NO2 and other pollutants, plus site and monitor reference files.
 - Many years of history, millions of rows per year, so the volume is real enough to justify a lakehouse.
 - Clear business questions: which counties exceed the standards, how air quality changed over time, where monitoring coverage is thin.
-- Fits your federal story and your EPA background without touching anything from your client work.
+- Keeps the project fully separate from your client work.
 
-**Documents for the GenAI layer:** the public AQS data dictionary, EPA's NAAQS fact sheets and the AQI technical guide (all public PDFs). These let the assistant answer both "what does this field mean" and "what does the standard say" questions.
+**Documents for the GenAI layer:** the public AQS data dictionary, the air quality standards fact sheets and the AQI technical guide (all public PDFs). These let the assistant answer both "what does this field mean" and "what does the standard say" questions.
 
-**Rule:** use only public data and public documents. Nothing from the GDIT or EPA contract goes in the repo.
+**Rule:** use only public data and public documents. Nothing from any client or employer work goes in the repo.
 
-**Backup option:** USAspending.gov award data, if you would rather show federal spending analytics. Same architecture works.
+**Backup option:** a city open data portal with a public license, if the air quality files ever become unavailable. Same architecture works.
 
 ## Architecture
 
 ```
-EPA AQS CSVs + public PDFs
+Public AQS CSVs + public PDFs
         |
         v
 Unity Catalog volume (raw files)
@@ -56,7 +56,7 @@ GOLD    dbt models: star schema (fact_daily_reading, dim_site, dim_pollutant, di
 | Area | Choice | What it proves |
 |---|---|---|
 | Workspace | Databricks Free Edition | Lakehouse skills without a cloud bill |
-| Governance | Unity Catalog: catalog `aq`, schemas `bronze`, `silver`, `gold`, `ai` | Federal style data governance |
+| Governance | Unity Catalog: catalog `aq`, schemas `bronze`, `silver`, `gold`, `ai` | Enterprise style data governance |
 | Ingestion | Auto Loader inside a Lakeflow Declarative Pipeline | Modern incremental ingestion |
 | Transform | PySpark for silver, dbt (dbt-databricks) for gold | PySpark at working level and analytics engineering |
 | Quality | Pipeline expectations plus dbt tests | Trustworthy data, not just pipelines |
@@ -102,7 +102,7 @@ databricks-lakehouse-genai/
 | 15 | Jan 18 to Jan 24 | SQL agent | Agent answers numeric questions from gold tables through a read only function; prompts and answers logged; refuses out of scope requests |
 | 16 | Jan 25 to Jan 31 | Demo and launch | 5 minute demo video, release v2.0, LinkedIn post |
 | 21 | Mar 1 to Mar 7 | Article | "Oracle Analytics to lakehouse: lessons from both sides," using this repo as the example |
-| 25 to 26 | Mar 29 to Apr 11 | Interview assets | Project turned into one interview story and a practice leader case (team, cost, risk for a federal migration) |
+| 25 to 26 | Mar 29 to Apr 11 | Interview assets | Project turned into one interview story and a practice leader case (team, cost, risk for an enterprise migration) |
 
 **Rough weekly time:** 6 to 8 hours in build weeks, 2 hours in exam and holiday weeks.
 
@@ -111,10 +111,10 @@ databricks-lakehouse-genai/
 Write the README for a hiring manager who gives it two minutes.
 
 1. **Title and one line summary.** What it is and who it is for.
-2. **The business problem.** Two or three sentences in agency language: which communities are exposed to unhealthy air, and where monitoring has gaps.
+2. **The business problem.** Two or three sentences in business language: which communities are exposed to unhealthy air, and where monitoring has gaps.
 3. **Demo.** Video link and three screenshots (dashboard, RAG answer with citations, agent answer).
 4. **Architecture.** The diagram and one paragraph per layer.
-5. **Key results.** Rows processed, pipeline run time, data quality pass rate, RAG eval score, estimated monthly cost at agency scale.
+5. **Key results.** Rows processed, pipeline run time, data quality pass rate, RAG eval score, estimated monthly cost at enterprise scale.
 6. **Governance and responsible AI.** Unity Catalog grants, lineage, PII stance (none in this data), guardrails, logging, evaluation.
 7. **How to run it.** Prerequisites, Terraform, bundle deploy, dbt run, in under ten steps.
 8. **Design decisions.** Links to the decision records, including the trade offs you made.
@@ -128,5 +128,5 @@ Write these down as you go so the numbers are ready for interviews:
 - Rows and years of data processed, and end to end run time
 - Data quality pass rate and the number of issues the checks caught
 - RAG evaluation score before and after tuning
-- Cost per run on serverless, and a projected monthly cost for an agency sized version
+- Cost per run on serverless, and a projected monthly cost for an enterprise sized version
 - Time from git push to deployed pipeline

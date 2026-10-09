@@ -1,7 +1,7 @@
 # Databricks notebook source
-"""Download EPA AQS pre-generated data files into a Unity Catalog volume.
+"""Download public Air Quality System pre-generated data files into a Unity Catalog volume.
 
-Source: https://aqs.epa.gov/aqsweb/airdata/download_files.html (public domain).
+Source: https://aqs.epa.gov/aqsweb/airdata/download_files.html (public domain, published for download).
 
 Run it as a Databricks notebook, or locally:
     python src/ingestion/download_aqs.py --dest ./data/aqs --years 2021 2025
